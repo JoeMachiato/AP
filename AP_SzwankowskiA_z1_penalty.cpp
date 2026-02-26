@@ -1,3 +1,4 @@
+// ACPC10E //
 #include <cstdio>
 
 int main() {
@@ -25,4 +26,5 @@ int main() {
         printf("%lld*%lld/%lld+%lld=%lld+%lld\n", G, A, T, D, X, Y);
     }
     return 0;
+
 }
