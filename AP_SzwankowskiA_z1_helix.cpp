@@ -1,3 +1,4 @@
+// ANARC05B //
 #include <cstdio>
 #include <climits>
 
@@ -32,4 +33,5 @@ int main() {
         printf("%lld\n", result);
     }
     return 0;
+
 }
