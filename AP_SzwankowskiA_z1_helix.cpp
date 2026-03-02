@@ -6,8 +6,6 @@ int buffA[10001], buffB[10001];
 
 int main() {
     int n1, n2;
-    freopen("plik.in", "r", stdin);
-    freopen("plik.out", "w", stdout);
     
     while (scanf("%d", &n1) == 1 && n1 != 0) {
         for (int i = 0; i < n1; i++) scanf("%d", &buffA[i]);
@@ -32,5 +30,6 @@ int main() {
     }
     return 0;
 }
+
 
 
