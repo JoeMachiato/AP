@@ -3,8 +3,6 @@
 
 int main() {
     long long G, T, A, D;
-    freopen("plik.in", "r", stdin);
-    freopen("plik.out", "w", stdout);
 
     while (scanf("%lld %lld %lld %lld", &G, &T, &A, &D) == 4 && G > 0 && A > 0 && T >= A && D >= 0) {
         long long numGS = G * (T * (T - 1) / 2);
@@ -29,5 +27,6 @@ int main() {
     }
     return 0;
 }
+
 
 
