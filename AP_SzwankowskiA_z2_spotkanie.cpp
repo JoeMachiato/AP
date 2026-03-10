@@ -1,3 +1,4 @@
+// https://vjudge.net/problem/UVA-10171 //
 #include <cstdio>
 #include <vector>
 
@@ -105,4 +106,5 @@ int main() {
     }
 
     return 0;
+
 }
