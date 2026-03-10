@@ -1,3 +1,4 @@
+// SPOJ BEADS - Glass Beads //
 #include <iostream>
 #include <string>
 
@@ -35,4 +36,5 @@ int main() {
         }
     }
     return 0;
+
 }
