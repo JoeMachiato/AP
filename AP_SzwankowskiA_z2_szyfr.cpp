@@ -42,9 +42,7 @@ inline void solve(int A, int K, const std::vector<std::string>& cypher, const st
     bool polysemy = false;
 
     while (!q.empty()) {
-        if (q.size() > 1) {
-            polysemy = true;
-        }
+        if (q.size() > 1) { polysemy = true; }
 
         int u = q.front();
         q.pop();
@@ -66,21 +64,15 @@ inline void solve(int A, int K, const std::vector<std::string>& cypher, const st
     }
 
     char decypher[26];
-    for(int i = 0; i < A; ++i) {
+    for(int i = 0; i < A; ++i) 
         decypher[result[i] - 'a'] = 'a' + i;
-    }
     
     std::string decrypted = "";
     for(char c : message) {
-        if (c >= 'a' && c < 'a' + A) {
-            decrypted += decypher[c - 'a'];
-        } else {
-            decrypted += c;
-        }
+        if (c >= 'a' && c < 'a' + A) { decrypted += decypher[c - 'a']; } 
+        else { decrypted += c; }
     }
-    
     std::cout << decrypted << "\n";
-    
 }
 
 int main() {
@@ -95,9 +87,8 @@ int main() {
         std::cin >> A >> K;
 
         std::vector<std::string> cypher(K);
-        for (int i = 0; i < K; ++i) {
+        for (int i = 0; i < K; ++i) 
             std::cin >> cypher[i];
-        }
 
         std::string encryptedMessage;
         std::cin >> std::ws;
@@ -105,7 +96,5 @@ int main() {
 
         solve(A, K, cypher, encryptedMessage);
     }
-
     return 0;
-
 }
