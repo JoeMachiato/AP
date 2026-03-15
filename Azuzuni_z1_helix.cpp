@@ -3,11 +3,10 @@
 #include <cstddef>
 #include <cstdint>
 #include <iostream>
+#include <vector>
 
 template<size_t SIZE=10000>
 int32_t GetLongestPath(const std::array<int16_t, SIZE>& path1, const std::array<int16_t, SIZE>& path2) {
-  if(path1.size() == 0 && path2.size() == 0) return 0;
-
   int32_t totalSum{};
   int32_t path1Sum{};
   int32_t path2Sum{};
@@ -45,19 +44,25 @@ int32_t GetLongestPath(const std::array<int16_t, SIZE>& path1, const std::array<
 
 int main(int argc, char* argv[]) {
   constexpr size_t SIZE{10000};
-  std::array<int16_t, SIZE> path1{};
-  std::array<int16_t, SIZE> path2{};
+  std::vector<int32_t> output{};
   int16_t length{};
 
+  std::cout << "\n\nInput:\n";
   while(std::cin >> length, length!=0){
+    std::array<int16_t, SIZE> path1{};
     for(int16_t i{}; i<length && i<SIZE; ++i) std::cin >> path1[i];
 
     std::cin >> length;
+    std::array<int16_t, SIZE> path2{};
     for(int16_t i{}; i<length && i<SIZE; ++i) std::cin >> path2[i];
     
     if(length >= SIZE) break;
-    std::cout << GetLongestPath(path1, path2) << '\n';
+    output.emplace_back(GetLongestPath(path1, path2));
   }
+
+  std::cout << "\n\nOutput:\n";
+  for(const auto& value : output)
+    std::cout << value << '\n';
 
   return 0;
 }
