@@ -9,8 +9,8 @@ int main (int argc, char *argv[]) {
 
   while(std::cin >> groups >> teams >> advancing >> directAdv) {
     if(groups <= 0 || advancing <= 0 || teams < advancing || directAdv < 0) break;
-    uint64_t numOfGames{static_cast<uint64_t>(groups * teams * (teams -1) / 2)};
-    uint64_t finalTeams{static_cast<uint64_t>(groups * advancing + directAdv)};
+    uint64_t numOfGames{static_cast<uint64_t>(groups) * teams * (teams -1) / 2};
+    uint64_t finalTeams{static_cast<uint64_t>(groups) * advancing + directAdv};
     uint64_t roundedTeams{1};
     while((roundedTeams<<=1) < finalTeams);
     std::cout << "\x1b[1m" << groups << '*' << advancing << '/' << teams << '+' << directAdv << '=' 
